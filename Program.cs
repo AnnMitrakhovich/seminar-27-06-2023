@@ -1,4 +1,33 @@
-﻿//
+﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 3
+int InputNum(string message)
+{
+    Console.Write(message);
+    return int.Parse(Console.ReadLine()!);
+}
+int CountDigits(int size)
+{
+    int count = 0;
+    int[] array = new int[size];
+    Console.Write("Введите числа через Enter: ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = Convert.ToInt32(Console.ReadLine()!);
+        if (array[i] > 0) count++;
+    }
+    return count;
+}
+int m = InputNum ("Сколько чисел вы собираетесь внести? ");
+int x = CountDigits(m);
+if (x>4) Console.WriteLine($"Введено {x} чисел больше 0.");
+else if (x<=4 && x>1) Console.WriteLine($"Введено {x} числа больше 0.");
+else if (x == 1) Console.WriteLine($"Введено {x} число больше 0.");
+else Console.WriteLine($"Чисел больше 0 нет.");
+
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 
 //  Не используя рекурсию, выведите первые N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и 1.
@@ -77,7 +106,7 @@
 //         res = number % 2;
 //         number /= 2;
 //         array[i] = res;
-        
+
 //     }
 //     return array;
 // }
